@@ -30,19 +30,22 @@ plant, background, and shadow pixels, and evaluate segmentation methods.
 | --- | --- |
 | CODE/eda_plantarea.ipynb | Exploratory analysis notebook |
 | DATA/raw/ | Original metadata and morphology spreadsheets |
-| DATA/raw/GoProImages/ | Local photograph dataset; stored separately from GitHub |
+| DATA/raw/GoProImages_Susquehanna_Milfoil/ | 25 photographs referenced in the morphology spreadsheet |
 | DATA/cleaned/ | Reserved for processed data |
 | DATA/results/ | Reserved for analysis outputs |
 
-## Photograph access
+## Photographs
 
-The complete photograph dataset contains 262 files totaling approximately
-19.7 GB and is stored separately from this repository.
+The repository includes 25 unique photographs referenced in the
+REFERENCE and BRANCH columns of the morphology spreadsheet.
+These images total approximately 87.4 MB and are located in:
 
-A dataset access link will be added here when available.
+DATA/raw/GoProImages_Susquehanna_Milfoil/
 
-To run the image analysis, place the photographs in
-DATA/raw/GoProImages/ or update the notebook to use their local location.
+Original filenames and image resolution are preserved.
+
+Before running the notebook, update its image-folder path to this
+location and its spreadsheet paths to the files in DATA/raw/.
 
 ## Running the notebook
 
