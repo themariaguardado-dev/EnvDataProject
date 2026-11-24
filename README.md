@@ -11,28 +11,23 @@ is to estimate total projected plant area and its vertical distribution.
 These measurements represent projected area. Interpreting them as
 biomass would require an additional area-to-biomass relationship.
 
-## Current progress
 
-The exploratory notebook examines:
+## Data Provenance
 
-- Plant representation in the morphology measurements.
-- Image availability and matches with calibration metadata.
-- Physical image resolution.
-- Red, green, and blue brightness distributions.
+The photographs and supporting metadata were collected during field and laboratory work in the summer of 2026. Nine shoots were collected, with the current analysis focusing on five branches of a single shoot (IDX 3).
 
-The next steps are to crop or mask unnecessary image regions while
-retaining all plant tissue and its immediate surroundings, compare
-plant, background, and shadow pixels, and evaluate segmentation methods.
+Photograph-specific spatial calibration factors were previously calculated in MATLAB using blue circular standards of known diameters.
 
 ## Project organization
 
 | Location | Contents |
 | --- | --- |
-| CODE/eda_plantarea.ipynb | Exploratory analysis notebook |
+| CODE/eda_4_peerreview.ipynb | Primary notebook for peer review |
+| CODE/ | Additional exploratory notebooks |
 | DATA/raw/ | Original metadata and morphology spreadsheets |
-| DATA/raw/GoProImages_Susquehanna_Milfoil/ | 25 photographs referenced in the morphology spreadsheet |
-| DATA/cleaned/ | Reserved for processed data |
-| DATA/results/ | Reserved for analysis outputs |
+| DATA/raw/GoProImages_Susquehanna_Milfoil/ | Original GoPro photographs |
+| DATA/results/vertical_area/ | Previously calculated area distributions for five branches of IDX 3 |
+
 
 ## Photographs
 
@@ -47,12 +42,44 @@ Original filenames and image resolution are preserved.
 Before running the notebook, update its image-folder path to this
 location and its spreadsheet paths to the files in DATA/raw/.
 
-## Running the notebook
+## Required Python Packages
 
-The notebook uses Python with Jupyter, NumPy, pandas, Matplotlib,
-Pillow, and openpyxl for reading Excel files.
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-learn
+- SciPy
+- OpenPyXL
+- Tkinter
+
+The notebook requires a local Jupyter environment supporting the interactive Matplotlib Tk backend.
 
 Before running the notebook, update the image and spreadsheet paths
 to match your computer. Run the cells in order.
 
-Interactive polygon cropping requires a working Matplotlib Qt backend.
+# Instructions for Lu
+
+1. Download or clone this repository.
+2. Open `CODE/eda_4_peerreview.ipynb`.
+3. Update the file and folder paths in the notebook to match their locations on your computer.
+4. Run the notebook cells sequentially.
+5. Follow the interactive instructions for polygon cropping, plant cluster selection, and stem tracing.
+6. Update the path to `DATA/results/vertical_area/` when prompted to load the previously processed branch distributions.
+
+Because portions of the workflow involve manual selections, your results may differ slightly from the saved notebook outputs.
+
+## Analytical Workflow
+
+1. Photograph cropping.
+2. Unsupervised K-means classification.
+3. Projected plant area estimation.
+4. Manual stem tracing.
+5. Assignment of plant pixels to axial distance intervals.
+6. Gaussian fitting and evaluation.
+7. Comparison of area distributions among five branches.
+
+## Limitations and Future Work
+
+The calculated distributions represent projected plant area along plant axes rather than actual vertical height or biomass.
+
+The current analysis serves as a proof of concept. Future work will apply the methodology to the remaining eight shoots to characterize variability among individuals.
