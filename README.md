@@ -8,10 +8,6 @@ This project explores methods for separating plant tissue from the
 background in RGB photographs of Susquehanna Flats milfoil. The goal
 is to estimate total projected plant area and its vertical distribution.
 
-These measurements represent projected area. Interpreting them as
-biomass would require an additional area-to-biomass relationship.
-
-
 ## Data Provenance
 
 The photographs and supporting metadata were collected during field and laboratory work in the summer of 2026. Nine shoots were collected, with the current analysis focusing on five branches of a single shoot (IDX 3).
@@ -61,10 +57,10 @@ to match your computer. Run the cells in order.
 
 1. Download or clone this repository.
 2. Open `CODE/eda_4_peerreview.ipynb`.
-3. Update the file and folder paths in the notebook to match their locations on your computer.
+3. You'll need to download everything in the data folder
 4. Run the notebook cells sequentially.
 5. Follow the interactive instructions for polygon cropping, plant cluster selection, and stem tracing.
-6. Update the path to `DATA/results/vertical_area/` when prompted to load the previously processed branch distributions.
+6. Update the path to `DATA/results/vertical_area/' when prompted to load the previously processed branch distributions.
 
 Because portions of the workflow involve manual selections, your results may differ slightly from the saved notebook outputs.
 
